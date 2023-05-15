@@ -9,11 +9,7 @@ const Hero = () => {
       return res.data.results;
     });
   });
-  const movie= heroMovies?.[Math.floor(Math.random() * 20)];
-  // setInterval(()=>{
-  //   movie = movies?.[Math.floor(Math.random() * 20)];
-  // }, 3000)
-  // console.log(movie);
+  const movie = heroMovies?.[Math.floor(Math.random() * 20)];
 
   return (
     <div className="text-white w-full h-[550px]">
@@ -36,7 +32,11 @@ const Hero = () => {
           </div>
           <p className="text-gray-400 text-sm mb-2">{movie?.release_date}</p>
           <p className="w-full md:max-w-[75%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">
-            {movie?.overview.length > 150 ? movie?.overview + '...' : movie?.overview}
+            {movie?.overview.length > 150
+              ? movie?.overview.slice(0, 150) +
+                "..." +
+                <button>Read More</button>
+              : movie?.overview}
           </p>
         </div>
       </div>
