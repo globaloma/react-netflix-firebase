@@ -1,6 +1,5 @@
 
-
-export const key = '965a710f1f30685f1dc1fa92cd38e099';
+export const key=process.env.REACT_APP_MOVIE_API_KEY
 
 
 export const requests = {
