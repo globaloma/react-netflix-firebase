@@ -31,11 +31,11 @@ const Hero = () => {
             </button>
           </div>
           <p className="text-gray-400 text-sm mb-2">{movie?.release_date}</p>
-          <p className="w-full md:max-w-[75%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">
-            {movie?.overview.length > 150
-              ? movie?.overview.slice(0, 150) +
-                "..." +
-                (<button>Read More</button>)
+          <p className="w-full sm:w-[90%] md:max-w-[50%] lg:w-[50%] xl:max-w-[35%] text-gray-200">
+            {movie?.overview.length > 300
+              ? movie?.overview.slice(0, 300) +
+                "..."  
+                // (<button>Read More</button>)
               : movie?.overview}
           </p>
         </div>
