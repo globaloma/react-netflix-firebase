@@ -35,7 +35,7 @@ const Hero = () => {
             {movie?.overview.length > 150
               ? movie?.overview.slice(0, 150) +
                 "..." +
-                <button>Read More</button>
+                (<button>Read More</button>)
               : movie?.overview}
           </p>
         </div>

@@ -45,7 +45,7 @@ const saveShow =async()=>{
         <p onClick={saveShow}
          className="">
           {like ? (
-            <FaHeart className="text-gray-300 absolute top-4 left-4" />
+            <FaHeart className="text-gray-300 absolute top-8 left-8" />
           ) : (
             <FaRegHeart className="text-gray-300 absolute top-8 left-8" />
           )}

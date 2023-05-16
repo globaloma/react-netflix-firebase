@@ -16,10 +16,10 @@ const Home = () => {
     <>
       <QueryClientProvider client={client}>
         <Hero />
-        <Row rowId={1} title="UpComing" fetchUrl={requests.requestUpcoming} />
+        <Row rowId={1} title="Popular" fetchUrl={requests.requestUpcoming} />
         <Row rowId={2} title="TopRated" fetchUrl={requests.requestTopRated} />
-        <Row rowId={3}  title="Trending" fetchUrl={requests.requestTrending} />
-        <Row rowId={4} title="Popular" fetchUrl={requests.requestPopular} />
+        <Row rowId={3}  title="NowPlaying" fetchUrl={requests.requestNowPlaying} />
+        <Row rowId={4} title="UpComing" fetchUrl={requests.requestPopular} />
         <Row rowId={5} title="Horror" fetchUrl={requests.requestHorror}/>
       </QueryClientProvider>
     </>

@@ -24,10 +24,11 @@ const SavedShows = () => {
     });
   }, [user?.email]);
 
+  const movieRef = doc(db, "users", `${user?.email}`)
   const deleteShow = async(passedId)=>{
     try{
-        const result = dbMovies?.filter((movie)=>movie !== passedId)
-        await updateDoc(doc(db, "users", `${user?.email}`), {
+        const result = dbMovies?.filter((movie)=>movie?.id !== passedId)
+        await updateDoc(movieRef, {
             savedShows:result
         })
     }
@@ -65,7 +66,7 @@ const SavedShows = () => {
                   <p className="p-4 text-xs whitespace-normal md:text-sm text-center font-bold justify-center h-full w-full items-center flex">
                     {movie.title}
                   </p>
-                  <p onClick={()=>{deleteShow(dbMovies?.id)}} className="absolute top-4 right-4 text-gray-300">
+                  <p onClick={()=>{deleteShow(movie?.id)}} className="absolute top-4 right-4 text-gray-300">
                     <AiOutlineClose />
                   </p>
                 </div>

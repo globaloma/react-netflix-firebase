@@ -7,8 +7,8 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import Movie from "./Movie";
 const Row = ({ title, fetchUrl, rowId }) => {
 
-  const { data: rowMovies } = useQuery(["rowMovies"], () => {
-    return Axios.get(fetchUrl).then((res) => {
+  const { data: rowMovies } = useQuery([fetchUrl], async () => {
+    return await Axios.get(fetchUrl).then((res) => {
       return res.data.results;
     });
   });
@@ -25,7 +25,7 @@ const Row = ({ title, fetchUrl, rowId }) => {
 
   return (
     <>
-      <h2 className="p-4  font-bold md:text-xl text-white">{title}</h2>
+      <h2 className="px-4 py-2 font-bold md:text-xl text-white">{title}</h2>
       <div className="text-white p-4 flex relative items-center group">
         <MdChevronLeft
         onClick={slideLeft}
